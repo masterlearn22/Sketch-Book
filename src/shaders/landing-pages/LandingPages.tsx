@@ -8,5 +8,6 @@ import { MENG_TO_SKETCHBOOK_TYPOGRAPHY } from "./pageRecipes";
 export function MengToSketchbookLandingPage(props: LandingPageProps & PageTypographyProps) {
   const [type, frame] = splitTypographyProps(props);
   const customization = usePageTypography(MENG_TO_SKETCHBOOK_TYPOGRAPHY, type);
-  return <LandingPageFrame {...frame} customization={customization} title="Meng To — Singapore Sketchbook" sourceUrl="/landing-pages/meng-to-sketchbook.html" />;
+  const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+  return <LandingPageFrame {...frame} customization={customization} title="Meng To — Singapore Sketchbook" sourceUrl={`${baseUrl}landing-pages/meng-to-sketchbook.html`} />;
 }
